@@ -1,6 +1,6 @@
 from faker import Faker
 from slugify import slugify
-from sqlalchemy import create_engine, insert
+from sqlalchemy import create_engine, insert, select
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session
 
@@ -18,13 +18,17 @@ def main():
 
     with Session(engine) as session:
         for _ in range(100):
-            name = fake.unique.name()
+            name = fake.unique.company()
             values = {
                 'name': name,
                 'slug': slugify(name),
                 'slogan': fake.unique.catch_phrase()
             }
             session.execute(insert(Company).values(**values))
+        
+        companies = session.execute(select(Company))
+        for company in companies:
+            print(f"{company.Company.name}: {company.Company.slogan}")
 
 
 if __name__ == "__main__":
