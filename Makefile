@@ -5,6 +5,7 @@ virtual-env:
 
 format:
 	. .venv/bin/activate; isort .
+	. .venv/bin/activate; black .
 
 destroy:
 	rm -rf .venv
