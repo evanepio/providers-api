@@ -10,9 +10,9 @@ from db.models import Base, Company
 def main():
     print("Starting...")
 
-    Base.metadata.create_all(create_engine("sqlite+pysqlite:///my.db", future=True))
-
     engine: Engine = create_engine("sqlite+pysqlite:///my.db", echo=True, future=True)
+
+    Base.metadata.create_all(engine)
 
     fake = Faker()
 
