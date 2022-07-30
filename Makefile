@@ -1,3 +1,5 @@
+run:
+	. .venv/bin/activate; uvicorn providers.main:app --reload
 
 virtual-env:
 	python -m venv .venv
