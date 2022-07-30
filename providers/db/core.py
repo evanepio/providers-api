@@ -41,10 +41,6 @@ def main():
 
     session.commit()
 
-    companies = session.execute(select(Company))
-    for company in companies:
-        print(f"{company.Company.name}: {company.Company.slogan}")
-
 
 if __name__ == "__main__":
     main()
