@@ -3,6 +3,7 @@ run:
 
 virtual-env:
 	python -m venv .venv
+	. .venv/bin/activate; pip install --upgrade pip
 	. .venv/bin/activate; pip install -r requirements/dev.txt
 
 lint:
