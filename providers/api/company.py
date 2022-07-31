@@ -9,17 +9,7 @@ router = APIRouter()
 
 
 @router.get("/")
-def get(db: Session = Depends(get_db)) -> list[dict]:
+def get(db: Session = Depends(get_db)) -> list[Company]:
     result_set = db.execute(select(Company))
 
-    results = [
-        {
-            "id": row.Company.id,
-            "name": row.Company.name,
-            "slogan": row.Company.slogan,
-            "slug": row.Company.slug,
-        }
-        for row in result_set
-    ]
-
-    return results
+    return result_set.all()
