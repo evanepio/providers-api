@@ -14,6 +14,7 @@ def get(db: Session = Depends(get_db)) -> list[dict]:
 
     results = [
         {
+            "id": c.Company.id,
             "name": c.Company.name,
             "slogan": c.Company.slogan,
             "slug": c.Company.slug,
