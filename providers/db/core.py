@@ -24,7 +24,7 @@ def get_db():
         db.close()
 
 
-def main():
+def init_db():
     print("Starting...")
 
     fake = Faker()
@@ -40,7 +40,3 @@ def main():
         session.execute(insert(Company).values(**values).on_conflict_do_nothing())
 
     session.commit()
-
-
-if __name__ == "__main__":
-    main()
