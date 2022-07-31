@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 
 from .api import company
-from .db.core import main as db_init
 
 app = FastAPI()
 
