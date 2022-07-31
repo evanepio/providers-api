@@ -1,6 +1,6 @@
 from faker import Faker
 from slugify import slugify
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine
 from sqlalchemy.dialects.sqlite import insert
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import sessionmaker
