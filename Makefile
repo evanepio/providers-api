@@ -11,5 +11,8 @@ lint:
 	. .venv/bin/activate; isort . --check-only
 	. .venv/bin/activate; black . --check
 
+clean:
+	find . | grep -E '(__pycache__|\.pyc|\.pyo$$)' | xargs rm -rf
+
 destroy:
 	rm -rf .venv
