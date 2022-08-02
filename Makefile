@@ -1,15 +1,17 @@
+VENV_BIN = .venv/bin
+
 run:
-	. .venv/bin/activate; uvicorn providers.main:app --reload
+	$(VENV_BIN)/uvicorn providers.main:app --reload
 
 virtual-env:
 	python -m venv .venv
-	. .venv/bin/activate; pip install --upgrade pip
-	. .venv/bin/activate; pip install -r requirements/dev.txt
+	$(VENV_BIN)/pip install --upgrade pip
+	$(VENV_BIN)/pip install -r requirements/dev.txt
 
 lint:
-	. .venv/bin/activate; flake8 .
-	. .venv/bin/activate; isort . --check-only
-	. .venv/bin/activate; black . --check
+	$(VENV_BIN)/flake8 .
+	$(VENV_BIN)/isort . --check-only
+	$(VENV_BIN)/black . --check
 
 clean:
 	find . | grep -E '(__pycache__|\.pyc|\.pyo$$)' | xargs rm -rf
