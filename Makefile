@@ -12,6 +12,7 @@ lint:
 	$(VENV_BIN)/flake8 .
 	$(VENV_BIN)/isort . --check-only
 	$(VENV_BIN)/black . --check
+	$(VENV_BIN)/mypy .
 
 clean:
 	find . | grep -E '(__pycache__|\.pyc|\.pyo$$)' | xargs rm -rf
