@@ -24,8 +24,7 @@ def init_db():
 
     fake = Faker()
 
-    session = Session(engine)
-    # session = next(get_db())
+    session = next(get_db())
     for _ in range(100):
         name = fake.unique.company()
         session.add(
@@ -37,7 +36,6 @@ def init_db():
         )
 
     session.commit()
-    session.close()
 
 
 if __name__ == "__main__":
