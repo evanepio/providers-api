@@ -1,15 +1,16 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import declarative_base
-
-Base = declarative_base()
+from sqlmodel import Field, SQLModel, UniqueConstraint
 
 
-class Company(Base):
-    __tablename__ = "Company"
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False, unique=True)
-    slug = Column(String, nullable=False, unique=True)
-    slogan = Column(String, nullable=False, unique=True)
+class Company(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    name: str
+    slug: str
+    slogan: str
+
+    __table_args__ = (
+        UniqueConstraint("name"),
+        UniqueConstraint("slug"),
+    )
 
     def __repr__(self):
         return f"{self.__name__}(id={self.id!r}, name={self.name!r})"
