@@ -14,3 +14,16 @@ class Company(SQLModel, table=True):
 
     def __repr__(self):
         return f"{self.__name__}(id={self.id!r}, name={self.name!r})"
+
+
+class CompanyCreate(SQLModel):
+    name: str
+    slug: str
+    slogan: str
+
+
+class CompanyRead(SQLModel):
+    id: int
+    name: str
+    slug: str
+    slogan: str
