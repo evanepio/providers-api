@@ -8,7 +8,7 @@ router = APIRouter()
 
 
 @router.get("/", response_model=list[CompanyRead])
-def get(db: Session = Depends(get_db)):
+def get_all(db: Session = Depends(get_db)):
     result_set = db.exec(select(Company))
 
     return result_set.all()
