@@ -7,7 +7,7 @@ from ..db.models import Company, CompanyCreate, CompanyRead
 router = APIRouter()
 
 
-@router.get("/", response_model=list[Company])
+@router.get("/", response_model=list[CompanyRead])
 def get(db: Session = Depends(get_db)):
     result_set = db.exec(select(Company))
 
