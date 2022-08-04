@@ -22,7 +22,7 @@ def get_by_id(company_id: int, db: Session = Depends(get_db)):
     return company
 
 
-@router.post("/", response_model=CompanyRead)
+@router.post("/", response_model=CompanyRead, status_code=201)
 def post(company: CompanyCreate, db: Session = Depends(get_db)):
     db_company = Company.from_orm(company)
     db.add(db_company)
