@@ -22,6 +22,14 @@ def get_by_id(company_id: int, db: Session = Depends(get_db)):
     return company
 
 
+@router.get("/{company_slug}/", response_model=CompanyRead)
+def get_by_slug(company_slug: str, db: Session = Depends(get_db)):
+    company = db.exec(select(Company).where(Company.slug==company_slug)).one_or_none()
+    if not company:
+        raise HTTPException(status_code=404, detail="Company not found")
+    return company
+
+
 @router.post("/", response_model=CompanyRead, status_code=201)
 def post(company: CompanyCreate, db: Session = Depends(get_db)):
     db_company = Company.from_orm(company)
