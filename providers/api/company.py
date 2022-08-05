@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlmodel import Session, select
 
 from ..db.core import get_db
@@ -8,8 +8,12 @@ router = APIRouter()
 
 
 @router.get("/", response_model=list[CompanyRead])
-def get_all(db: Session = Depends(get_db)):
-    result_set = db.exec(select(Company))
+def get_all(
+    offset: int = 0,
+    limit: int = Query(default=20, lte=20),
+    db: Session = Depends(get_db),
+):
+    result_set = db.exec(select(Company).offset(offset).limit(limit))
 
     return result_set.all()
 
