@@ -33,3 +33,11 @@ Clean temporary files:
 ```bash
 make clean
 ```
+
+## When running
+
+When running the server (`make run`), go here for the OpenAPI docs:
+
+http://localhost:8000/docs#/
+
+There you can play with the API
