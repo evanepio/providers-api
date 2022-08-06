@@ -7,6 +7,15 @@ from ..db.models import Company, CompanyCreate, CompanyRead
 router = APIRouter()
 
 
+@router.post("/", response_model=CompanyRead, status_code=201)
+def create_company(company: CompanyCreate, db: Session = Depends(get_db)):
+    db_company = Company.from_orm(company)
+    db.add(db_company)
+    db.commit()
+    db.refresh(db_company)
+    return db_company
+
+
 @router.get("/", response_model=list[CompanyRead])
 def get_all_companies(
     offset: int = 0,
@@ -32,12 +41,3 @@ def get_comapny_by_slug(company_slug: str, db: Session = Depends(get_db)):
     if not company:
         raise HTTPException(status_code=404, detail="Company not found")
     return company
-
-
-@router.post("/", response_model=CompanyRead, status_code=201)
-def create_company(company: CompanyCreate, db: Session = Depends(get_db)):
-    db_company = Company.from_orm(company)
-    db.add(db_company)
-    db.commit()
-    db.refresh(db_company)
-    return db_company
