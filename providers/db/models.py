@@ -22,3 +22,9 @@ class CompanyCreate(CompanyBase):
 
 class CompanyRead(CompanyBase):
     id: int
+
+
+class CompanyUpdate(SQLModel):
+    name: str | None
+    slug: str | None
+    slogan: str | None

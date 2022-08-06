@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlmodel import Session, select
 
 from ..db.core import get_db
-from ..db.models import Company, CompanyCreate, CompanyRead
+from ..db.models import Company, CompanyCreate, CompanyRead, CompanyUpdate
 
 router = APIRouter()
 
@@ -41,3 +41,22 @@ def get_comapny_by_slug(company_slug: str, db: Session = Depends(get_db)):
     if not company:
         raise HTTPException(status_code=404, detail="Company not found")
     return company
+
+
+@router.patch("/{company_id}", response_model=CompanyRead)
+def update_company(
+    company_id: int, company: CompanyUpdate, db: Session = Depends(get_db)
+):
+    db_company = db.get(Company, company_id)
+    if not db_company:
+        raise HTTPException(status_code=404, detail="Company not found")
+
+    company_data = company.dict(exclude_unset=True)
+    for key, value in company_data.items():
+        setattr(db_company, key, value)
+
+    db.add(db_company)
+    db.commit()
+    db.refresh(db_company)
+
+    return db_company
