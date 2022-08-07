@@ -16,6 +16,16 @@ def create_company(company: CompanyCreate, db: Session = Depends(get_db)):
     return db_company
 
 
+@router.delete("/{company_id}")
+def delete_company(company_id: int, db: Session = Depends(get_db)):
+    company = db.get(Company, company_id)
+    if not company:
+        raise HTTPException(status_code=404, detail="Company not found")
+    db.delete(company)
+    db.commit()
+    return {"ok": True}
+
+
 @router.get("/", response_model=list[CompanyRead])
 def get_all_companies(
     offset: int = 0,
