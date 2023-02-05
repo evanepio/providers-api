@@ -2,7 +2,7 @@ from faker import Faker
 from slugify import slugify
 import httpx
 
-from  providers.db.core import create_db_and_tables
+from providers.db.core import create_db_and_tables
 
 
 def insert_random_stuff():
@@ -15,9 +15,9 @@ def insert_random_stuff():
         data = {
             "name": name,
             "slug": slugify(name),
-            "slogan": fake.unique.catch_phrase()
+            "slogan": fake.unique.catch_phrase(),
         }
-        response = httpx.post('http://127.0.0.1:8000/companies/', json=data)
+        response = httpx.post("http://127.0.0.1:8000/companies/", json=data)
 
         print(response.headers)
 
