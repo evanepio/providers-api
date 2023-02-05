@@ -1,6 +1,5 @@
 from sqlmodel import Session, SQLModel, create_engine
 
-
 engine = create_engine("sqlite+pysqlite:///my.db", echo=True)
 
 

@@ -1,6 +1,6 @@
+import httpx
 from faker import Faker
 from slugify import slugify
-import httpx
 
 from providers.db.core import create_db_and_tables
 
