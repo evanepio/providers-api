@@ -115,14 +115,14 @@ files = [
 
 [[package]]
 name = "faker"
-version = "16.6.1"
+version = "16.9.0"
 description = "Faker is a Python package that generates fake data for you."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "Faker-16.6.1-py3-none-any.whl", hash = "sha256:2375d0bbaf405dc4f1cbc771485a78ad952c776798e5c228eef3e7b337f78868"},
-    {file = "Faker-16.6.1.tar.gz", hash = "sha256:b76e5d2405470e3d38d37d1bfaa9d9bbf171bdf41c814f5bbd8117b121f6bccb"},
+    {file = "Faker-16.9.0-py3-none-any.whl", hash = "sha256:1f76bd19a642e4af88e8139c6bf764294cfee0172e652d660777e4c570b0699b"},
+    {file = "Faker-16.9.0.tar.gz", hash = "sha256:b5dce93b50cd83278b4e6a47b80f0f1ab340f726e27a2b45ba93b814f0612752"},
 ]
 
 [package.dependencies]
@@ -766,4 +766,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "16e7ec52cf30103e22cd9c093ea2b00038770031e0f6e4504547e30bcfbe270f"
+content-hash = "ade093611d7f63802b7bc2d9cf8087157c36874eec2dfcc2729be85204c68bfb"
