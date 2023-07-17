@@ -21,7 +21,7 @@ httpx = "^0.24.1"
 python-slugify = "^8.0.1"
 
 [tool.poetry.group.format.dependencies]
-black = "^23.3.0"
+black = "^23.7.0"
 
 [tool.poetry.group.import-sort.dependencies]
 isort = "^5.12.0"
