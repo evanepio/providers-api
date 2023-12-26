@@ -17,7 +17,7 @@ uvicorn = "^0.24.0"
 
 [tool.poetry.group.dev.dependencies]
 faker = "^21.0.0"
-httpx = "^0.25.2"
+httpx = "^0.26.0"
 python-slugify = "^8.0.1"
 
 [tool.poetry.group.format.dependencies]
