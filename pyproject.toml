@@ -30,7 +30,7 @@ isort = "^5.13.2"
 flake8 = "^6.1.0"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.4.3"
+pytest = "^7.4.4"
 
 [tool.pytest.ini_options]
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
