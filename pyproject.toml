@@ -13,7 +13,7 @@ packages = [
 python = "^3.11"
 fastapi = "^0.115.2"
 sqlmodel = "^0.0.22"
-uvicorn = "^0.31.1"
+uvicorn = "^0.32.0"
 
 [tool.poetry.group.dev.dependencies]
 faker = "^30.3.0"
