@@ -850,19 +850,20 @@ sqlcipher = ["sqlcipher3-binary"]
 
 [[package]]
 name = "sqlmodel"
-version = "0.0.37"
+version = "0.0.38"
 description = "SQLModel, SQL databases in Python, designed for simplicity, compatibility, and robustness."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "sqlmodel-0.0.37-py3-none-any.whl", hash = "sha256:2137a4045ef3fd66a917a7717ada959a1ceb3630d95e1f6aaab39dd2c0aef278"},
-    {file = "sqlmodel-0.0.37.tar.gz", hash = "sha256:d2c19327175794faf50b1ee31cc966764f55b1dedefc046450bc5741a3d68352"},
+    {file = "sqlmodel-0.0.38-py3-none-any.whl", hash = "sha256:84e3fa990a77395461ded72a6c73173438ce8449d5c1c4d97fbff1b1df692649"},
+    {file = "sqlmodel-0.0.38.tar.gz", hash = "sha256:d583ec237b14103809f74e8630032bc40ab68cd6b754a610f0813c56911a547b"},
 ]
 
 [package.dependencies]
 pydantic = ">=2.11.0"
 SQLAlchemy = ">=2.0.14,<2.1.0"
+typing-extensions = ">=4.5.0"
 
 [[package]]
 name = "starlette"
@@ -957,4 +958,4 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "1573c2d3ff648cf7594bbd6f9e09908e1cf8c4c2580b625131c2715256d3041b"
+content-hash = "c21e48cd5f883951c7a45eb4d63f3f0c82c0761720c2b1deaebb848d29cef752"
