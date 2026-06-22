@@ -156,14 +156,14 @@ tzdata = ["tzdata"]
 
 [[package]]
 name = "fastapi"
-version = "0.137.0"
+version = "0.138.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "fastapi-0.137.0-py3-none-any.whl", hash = "sha256:6dcbde8d464f92117c1accb9e42720f8e423fa9b86cb563b1f5862f785a06498"},
-    {file = "fastapi-0.137.0.tar.gz", hash = "sha256:d0565d551f65a803ecff245390840867186f456ef98971f750724eed16e1541c"},
+    {file = "fastapi-0.138.0-py3-none-any.whl", hash = "sha256:b6f54fd1bd72c80b0f899f172c61a600f6f7af9b43d4d772a018f35624048cb0"},
+    {file = "fastapi-0.138.0.tar.gz", hash = "sha256:d445a4877636ad191e7053e08c9bf98cb921a6756776848400bb773d1740c061"},
 ]
 
 [package.dependencies]
@@ -961,4 +961,4 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.8.0)
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "2e17fa6704d97f29ffafb2ae9a70d6db4873be0f85eb3ed1c25ea657255fd08e"
+content-hash = "f199b99cd8197f50f680b567cc85a2cdf450318a1f72c92933463e2a3762ecc2"
