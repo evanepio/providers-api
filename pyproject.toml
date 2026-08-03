@@ -11,7 +11,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.140.0"
+fastapi = "^0.141.1"
 sqlmodel = "^0.0.39"
 uvicorn = "^0.51.0"
 
