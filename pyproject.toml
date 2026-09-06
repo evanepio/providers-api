@@ -12,7 +12,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.141.1"
-sqlmodel = "^0.0.39"
+sqlmodel = "^0.0.42"
 uvicorn = "^0.52.4"
 
 [tool.poetry.group.dev.dependencies]
