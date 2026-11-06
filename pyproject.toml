@@ -16,7 +16,7 @@ sqlmodel = "^0.0.48"
 uvicorn = "^0.54.0"
 
 [tool.poetry.group.dev.dependencies]
-faker = "^40.43.0"
+faker = "^40.44.0"
 httpx = "^0.28.1"
 python-slugify = "^9.1.3"
 
